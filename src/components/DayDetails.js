@@ -3,7 +3,7 @@ import React from "react";
 
 const DayDetails = props => {
     return(
-        <h2>SearchBar</h2>
+        <h2>Day Details</h2>
     )
 }
 
