@@ -21,7 +21,7 @@ function App() {
       <Row>
         {sampleData.data.map(day => (
           <Col>
-            <DayCard></DayCard>
+            <DayCard/>
           </Col>
         ))}
       </Row>
