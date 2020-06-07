@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col} from "reactstrap";
+import sampleData from "./data/sample.json"
 import SearchBar from "./components/SearchBar"
 import DayDetails from "./components/DayDetails"
 import DayCard from "./components/DayCard"
@@ -17,7 +18,13 @@ function App() {
           <SearchBar/>
         </Col>
       </Row>
-      <Row></Row>
+      <Row>
+        {sampleData.data.map(day => (
+          <Col>
+            <DayCard></DayCard>
+          </Col>
+        ))}
+      </Row>
       <Row>
     <Col>
     <DayDetails></DayDetails>
