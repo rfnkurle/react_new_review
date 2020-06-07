@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col} from "reactstrap";
 import sampleData from "./data/sample.json"
 import SearchBar from "./components/SearchBar"
@@ -7,7 +7,22 @@ import DayCard from "./components/DayCard"
 
 // import './App.css';
 
-function App() {
+const App = () => {
+//adding state to a dumb component happens above return
+//at main level
+//first array member is what you want to change, second is the method to change that thing
+
+const [weatherInfo, setWeatherInfo] = useState({
+  //initial values
+  searchTerm: "",
+  selectedDay: null,
+  days: sampleData.data,
+  location: "Denver, CO",
+  // days: [],
+  // location: ""
+});
+
+
   return (
     <Container>
       <Row>
