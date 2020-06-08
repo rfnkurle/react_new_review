@@ -22,19 +22,22 @@ const [weatherInfo, setWeatherInfo] = useState({
   // location: ""
 });
 
+//destructure key value pairs for easier access to variables
+const {searchTerm, selectedDay, days, location} = weatherInfo
+
 
   return (
     <Container>
       <Row>
         <Col md={7}>
-          <h1>Weather Info for LOCATION</h1>
+          <h1>Weather Info for {location}</h1>
         </Col>
         <Col md={5}>
           <SearchBar/>
         </Col>
       </Row>
       <Row>
-        {sampleData.data.map(day => (
+        {days.data.map(day => (
           <Col>
             <DayCard/>
           </Col>
