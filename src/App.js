@@ -40,7 +40,15 @@ const {searchTerm, selectedDay, days, location} = weatherInfo
       <Row>
         {days.data.map(day => (
           <Col>
-            <DayCard/>
+            <DayCard
+            day= {moment(day.valid_date, "YYYY-MM-DD").format('dddd')}
+            icon = {day.weather.icon}
+            description={day.weather.description}
+            temp={day.temp}
+            high={day.max_temp}
+            low={day.min_temp}
+            precip={day.pop}
+            />
           </Col>
         ))}
       </Row>
