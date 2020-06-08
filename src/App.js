@@ -38,9 +38,10 @@ const {searchTerm, selectedDay, days, location} = weatherInfo
         </Col>
       </Row>
       <Row>
-        {days.data.map(day => (
+        {days.map(day => (
           <Col>
             <DayCard
+            key={day.ts}
             day= {moment(day.valid_date, "YYYY-MM-DD").format('dddd')}
             icon = {day.weather.icon}
             description={day.weather.description}
