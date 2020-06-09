@@ -1,11 +1,12 @@
 import React from "react";
 import {Col, Card, CardHeader, CardBody} from 'reactstrap'
-
+import { CardWrapper } from '../styles';
 
 const DayCard = props => {
     console.log(props)
     return(
         <Col>
+        <CardWrapper>
         <Card>
         <CardHeader>{props.day}</CardHeader>
         <CardBody>
@@ -16,6 +17,7 @@ const DayCard = props => {
         <p><strong>Precip:</strong> {props.precip}%</p>
         </CardBody>
         </Card>
+        </CardWrapper>
         </Col>
     )
 }
