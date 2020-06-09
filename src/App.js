@@ -49,6 +49,10 @@ const {searchTerm, selectedDay, days, location} = weatherInfo
             high={day.max_temp}
             low={day.min_temp}
             precip={day.pop}
+            isSelected={day === selectedDay}
+            //useState overwrites old value with new value, spreads in all values in and then puts in selected Day
+            //so we don't lose any key value pairs from state when we want selectedDay
+            selectDay={() => setWeatherInfo({...weatherInfo, selectedDay: day})}
             />
           </Col>
         ))}

@@ -5,7 +5,7 @@ const teal = '#008080'
 export const CardWrapper = styled.article`
 
 :hover {
-    cursor: pointer
+    cursor: pointer;
     .card {
         border-color: ${teal}
     }
@@ -22,6 +22,7 @@ img {
 }
 
 .card-header {
+    background-color: ${props => props.isSelected ? teal : null};
     font-weight:700;
 }
 

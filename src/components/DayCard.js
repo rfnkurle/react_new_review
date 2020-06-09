@@ -6,7 +6,7 @@ const DayCard = props => {
     console.log(props)
     return(
         <Col>
-        <CardWrapper>
+        <CardWrapper isSelected={props.isSelected} onClick={props.selectDay}>
         <Card>
         <CardHeader>{props.day}</CardHeader>
         <CardBody>
