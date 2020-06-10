@@ -59,8 +59,23 @@ const {searchTerm, selectedDay, days, location} = weatherInfo
       </Row>
       <Row>
     <Col>
-    <DayDetails></DayDetails>
-    </Col>
+    {selectedDay ? (
+      <DayDetails
+      day= {moment(selectedDay.valid_date, "YYYY-MM-DD").format('dddd')}
+      icon = {selectedDay.weather.icon}
+      description={selectedDay.weather.description}
+      temp={selectedDay.temp}
+      high={selectedDay.max_temp}
+      low={selectedDay.min_temp}
+      precip={selectedDay.pop}
+     
+     
+     />
+    ): (
+
+      <h3>Click on an above day to get details</h3>
+    )}
+</Col>
   </Row>
     </Container>
   );
