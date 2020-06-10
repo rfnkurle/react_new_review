@@ -26,15 +26,28 @@ const [weatherInfo, setWeatherInfo] = useState({
 //destructure key value pairs for easier access to variables
 const {searchTerm, selectedDay, days, location} = weatherInfo
 
-
-  return (
+//standard functions need to live in parent component and get passed down to children as props
+//since searchterm lives here, we build here and pass down to searchbar
+//
+const handleInputChange = e => {
+  console.log(e.target)
+  //name => WHICH tells you which state you want to change in SearchBar Input
+  //value => WHAT I want to set it to
+  const { name, value} = e.target;
+  //useState method
+  setWeatherInfo({ ...weatherInfo, [name]: value})
+}
+return (
     <Container>
       <Row>
         <Col md={7}>
           <h1>Weather Info for {location}</h1>
         </Col>
         <Col md={5}>
-          <SearchBar/>
+          <SearchBar
+          searchTerm={searchTerm}
+          handleInputChange={handleInputChange}
+          />
         </Col>
       </Row>
       <Row>
