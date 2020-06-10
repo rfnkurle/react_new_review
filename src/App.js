@@ -61,7 +61,7 @@ const {searchTerm, selectedDay, days, location} = weatherInfo
     <Col>
     {selectedDay ? (
       <DayDetails
-      day= {moment(selectedDay.valid_date, "YYYY-MM-DD").format('dddd')}
+      day= {moment(selectedDay.valid_date, "YYYY-MM-DD").format("dddd, MMMM Do, YYYY")}
       icon = {selectedDay.weather.icon}
       description={selectedDay.weather.description}
       temp={selectedDay.temp}

@@ -4,30 +4,34 @@ const teal = '#008080'
 
 export const CardWrapper = styled.article`
 
+display: flex;
+
+justify-content: space-evenly;
+
 :hover {
     cursor: pointer;
     .card {
         border-color: ${teal}
     }
-}
+};
 
 text-align: center;
 
 img {
     width: 80px
-}
+};
 
 .card {
    border-width:2px;
-}
+};
 
 .card-header {
     background-color: ${props => props.isSelected ? teal : null};
     font-weight:700;
-}
+};
 
 .card-body{
     padding: 1.23rem .5rem;
-}
+};
 
 `
