@@ -5,6 +5,7 @@ import sampleData from "./data/sample.json"
 import SearchBar from "./components/SearchBar"
 import DayDetails from "./components/DayDetails"
 import DayCard from "./components/DayCard"
+import API from "./utils/API"
 
 // import './App.css';
 
