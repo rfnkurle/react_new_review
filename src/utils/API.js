@@ -10,6 +10,8 @@ const weatherKey = process.env.REACT_APP_WEATHER_KEY;
 export default {
     getWeather: function(location){
             console.log(googleKey, weatherKey)
+
+            return axios.get('')
     }
 }
 

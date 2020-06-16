@@ -28,6 +28,16 @@ const [weatherInfo, setWeatherInfo] = useState({
 //destructure key value pairs for easier access to variables
 const {searchTerm, selectedDay, days, location} = weatherInfo
 
+
+//unless specified in dependencies array, useEffect will run on EACH render
+useEffect(()=> {
+API.getWeather("Orlando");
+
+}, 
+//dependencies array specifies when you want useEffect to run AFTER first render
+
+[] )
+
 //standard functions need to live in parent component and get passed down to children as props
 //since searchterm lives here, we build here and pass down to searchbar
 //
