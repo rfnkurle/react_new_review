@@ -18,7 +18,7 @@ export default {
                     const {lat, lng: lon} = res.data.results[0].geometry.location;
                     console.log(lat, lon)
 
-            return axios.get(`https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lon}&key=${weatherKey}
+            return axios.get(`https://api.weatherbit.io/v2.0/forecast/daily?lat=${lat}&lon=${lon}&units=I&days=7&key=${weatherKey}
                     `)
                 })
             .catch(err => {

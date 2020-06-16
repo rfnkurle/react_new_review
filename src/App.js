@@ -31,8 +31,19 @@ const {searchTerm, selectedDay, days, location} = weatherInfo
 
 //unless specified in dependencies array, useEffect will run on EACH render
 useEffect(()=> {
-API.getWeather("Orlando");
+API.getWeather("Orlando")
+  .then(res => {
+      
+      console.log(res);
+    setWeatherInfo({
+      searchTerm:"",
+      selectedDay: null,
+      days: res.data.data,
+      location: res.data.city_name + ", " + res.data.state_code
 
+    })
+    })
+  .catch(err => console.log(err))
 }, 
 //dependencies array specifies when you want useEffect to run AFTER first render
 
