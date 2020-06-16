@@ -8,7 +8,8 @@ import DayCard from "./components/DayCard"
 import API from "./utils/API"
 
 // import './App.css';
-
+//useEffect is a hook that lets you choose what time something renders
+//similar to lifecycle methods in old school react
 const App = () => {
 //adding state to a dumb component happens above return
 //at main level
