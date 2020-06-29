@@ -21,8 +21,8 @@ const [weatherInfo, setWeatherInfo] = useState({
   selectedDay: null,
   days: sampleData.data,
   location: "Denver, CO",
-  // days: [],
-  // location: ""
+  days: [],
+  location: ""
 });
 
 //destructure key value pairs for easier access to variables
@@ -31,7 +31,15 @@ const {searchTerm, selectedDay, days, location} = weatherInfo
 
 //unless specified in dependencies array, useEffect will run on EACH render
 useEffect(()=> {
-API.getWeather("Orlando")
+  getWeather("Las Vegas, NV")
+}, 
+//dependencies array specifies when you want useEffect to run AFTER first render
+
+[] )
+
+
+const getWeather = location => {
+  API.getWeather(location)
   .then(res => {
       
       console.log(res);
@@ -44,11 +52,7 @@ API.getWeather("Orlando")
     })
     })
   .catch(err => console.log(err))
-}, 
-//dependencies array specifies when you want useEffect to run AFTER first render
-
-[] )
-
+}
 //standard functions need to live in parent component and get passed down to children as props
 //since searchterm lives here, we build here and pass down to searchbar
 //
