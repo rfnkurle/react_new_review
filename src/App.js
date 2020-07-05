@@ -21,8 +21,8 @@ const [weatherInfo, setWeatherInfo] = useState({
   selectedDay: null,
   days: sampleData.data,
   location: "Denver, CO",
-  days: [],
-  location: ""
+  // days: [],
+  // location: ""
 });
 
 //destructure key value pairs for easier access to variables
